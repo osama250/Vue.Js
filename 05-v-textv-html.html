@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> V-text / V-Html </title>
+</head>
+<body>
+
+    <div id="methods">
+        <p v-text="name"> </p>    
+        <!-- <p v-text="name ? 'Your  name is set' : 'your name is not set' "> </p>     -->
+        <p v-text='title'></p>
+        <p v-html='title'></p>
+   </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var ve = new Vue ({
+
+            el: '#methods' ,
+            data: 
+            {
+                // name: false ,
+                name : 'Osama' , 
+                title: '<h4 class="rank">  Hello Vue.js </h4>' ,
+            },
+   
+        })
+    </script>
+</body>
+</html>

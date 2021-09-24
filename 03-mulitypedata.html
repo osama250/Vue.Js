@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Multi-DataType </title>
+</head>
+<body>
+    <div id="multi"> 
+        <p> {{ 'Weclome ' + name }} </p>
+        <p> {{ 'Your Age Is '  + age + ' Years' }} </p>
+        <p> {{ 'First Skill Have Is ' + skills[0] }} </p>
+        <p> You Are {{  isSubscribe ? 'Subscribe' : 'Not Subscribe' }}</p>
+        <p> Fisrt Test Is {{ Tests[2].tstname + ' And Your Degree Is ' + Tests[2].degree }} </p>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var ve = new Vue ({
+
+            el: '#multi' ,
+            data: 
+            {
+                name: 'Osama' ,
+                age: 23 ,
+                skills: ['HTML5' , 'Css' , 'Vue.js'] , 
+                isSubscribe : false ,
+                Tests: 
+                [
+                    {
+                        tstname: 'HTML' , 
+                        degree: 80 
+                    } , 
+                    {
+                        tstname: 'Css' , 
+                        degree: 70 
+                    } , 
+                    {
+                        tstname: 'Vue.js' , 
+                        degree: 90 
+                    } 
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

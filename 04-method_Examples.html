@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Method Examples </title>
+</head>
+<body>
+    
+   <div id="methods">
+        <p> {{ myname() }} </p>
+        <p> {{ date }}</p>
+        <p> {{ myage() }}</p>
+        <button @click="showdate"> Show New Date </button>
+   </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var ve = new Vue ({
+
+            el: '#methods' ,
+            data: 
+            {
+                name: 'Osama' ,
+                age: 23 ,
+                date: 'Today', 
+                skills: ['HTML5' , 'Css' , 'Vue.js'] , 
+                isSubscribe : false ,
+                Tests: 
+                [
+                    {
+                        tstname: 'HTML' , 
+                        degree: 80 
+                    } , 
+                    {
+                        tstname: 'Css' , 
+                        degree: 70 
+                    } , 
+                    {
+                        tstname: 'Vue.js' , 
+                        degree: 90 
+                    } , 
+                ] ,   
+            },
+            methods: {
+                myname: function() {
+                    return this.name; 
+                } , 
+                myage: function() {
+                    return 'Your Age Is ' +  this.age * 365 + ' Days';  
+                } , 
+                showdate: function() {
+                    this.date = Date(); 
+                }
+            } 
+        })
+    </script>
+</body>
+</html>
