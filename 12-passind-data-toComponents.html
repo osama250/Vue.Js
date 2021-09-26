@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Passing-Data-ToComponents </title>
+</head>
+<body>
+    <div id="multi"> 
+        <h3> Welcome  {{ name }} </h3>  
+        <app-count :source='source' ></app-count>
+        <app-count></app-count>
+        <app-count></app-count>
+     </div>
+
+    <script src="vue.js"></script>
+    <script>
+        Vue.component( 'app-count' , {
+            data: function() {
+                return {
+                    name: 'Ahmed' , 
+                    count: 0 
+                }
+            } ,
+            props: ['source'] ,
+            template: '<p @click=count++> Welcome {{ name }}  You Clicked {{ count }} Times Source From {{ source }} </p>'
+        })
+        var ve = new Vue ({
+            el: '#multi' ,
+            data: 
+            {
+                name: 'Osama' ,
+                source: 'https://www.goggle.com'
+            }
+        })
+    </script>
+</body>
+</html>

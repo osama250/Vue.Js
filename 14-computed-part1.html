@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Computed Part 1 </title>
+</head>
+<body>
+        
+    <div id="multi"> 
+        <h3> Welcome  {{ name }} </h3>  
+        <h5> Your Age Is {{ calcage }}  </h5> 
+        <h5> Your Age Is {{ calcage }}  </h5> 
+        <h5> Your Age Is {{ calcage }}  </h5> 
+        <h4> {{ reverse }} </h4>
+     </div>
+
+    <script src="vue.js"></script>
+    <script>
+    
+        var ve = new Vue ({
+            el: '#multi' ,
+            data: 
+            {
+                name: 'Osama Yousry' , 
+                age: 23  
+            } , 
+            methods:
+            {
+                // calcage: function() {    
+                //     console.log('Run');    print run evey time call function 
+                //     return this.age * 2;
+                // }
+            } , 
+            computed: 
+            {  // in computed action run one time that i call many times in view 
+                calcage: function() {    
+                    console.log('Run');    // print run one time  
+                    return this.age * 2;
+                } , 
+                reverse: function() {
+                    return this.name.split('').reverse().join('');
+                }
+            }
+        })
+    </script>
+</body>
+</html>

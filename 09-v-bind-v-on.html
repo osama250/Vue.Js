@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> V-bind \ V-on </title>
+</head>
+<body>
+    <div id="multi"> 
+        <p v-once> Welcome {{ name }} </p>             
+       <a :href="url">
+        <img :src="src" :alt="alt"  width="400px" height="400px"> 
+       </a>
+       <p> {{ counter }}  </p>
+       <button @click='counter++'> Increase Counter </button>     <!--  v-on = @click   --> 
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var ve = new Vue ({
+
+            el: '#multi' ,
+            data: 
+            {
+                name: 'Osama' ,
+                src: 'img/os.jpg' , 
+                alt : 'Testing',
+                url: 'https://wwww.google.com' , 
+                counter: 0
+            }
+        })
+    </script>
+</body>
+</html>

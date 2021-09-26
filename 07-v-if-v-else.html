@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> V-if  V-else </title>
+</head>
+<body>
+    <div id="multi"> 
+        <p v-if='name'>  Weclome {{ name }} </p>
+        <p v-else> Dont Have Name </p>
+        <p v-if='age > 18 && age < 50'> Ok you Are {{ age }} Can Login  </p> 
+        <p v-else-if='age < 18'> Sorry you Are {{ age }} Can not Login  </p> 
+        <p v-else> Age Biggerthan 50  </p>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var ve = new Vue ({
+
+            el: '#multi' ,
+            data: 
+            {
+                name: 'Osama' ,  
+                age: 40
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> V-show \ V-once </title>
+</head>
+<body>
+    <div id="multi"> 
+        <p v-once> Welcome {{ name }} </p>       <!--  v-once value be static can not update value       --> 
+        <p v-show='age'> You Are  {{ age }} </p>       <!--  v-show if vlaue not found make display none in css in tag      --> 
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var ve = new Vue ({
+
+            el: '#multi' ,
+            data: 
+            {
+                name: 'Osama' ,  
+                age: 23 
+            }
+        })
+    </script>
+</body>
+</html>

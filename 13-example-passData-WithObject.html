@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Passing-Data With-Object In-Components  </title>
+</head>
+<body>
+
+    <div id="multi"> 
+        <h3> Welcome  {{ name }} </h3>  
+        <app-article v-for='post in posts' :title='post.title' :author='post.author'> </app-article>
+     </div>
+
+    <script src="vue.js"></script>
+    <script>
+        Vue.component( 'app-article' , {
+            data: function() {
+                return {
+                    count: 0 
+                }
+            } ,
+            props: [ 'author' , 'title'] ,
+            template: '<p>  Name Of Title {{ title }}  And Author Is {{ author }} </p>'
+        })
+        var ve = new Vue ({
+            el: '#multi' ,
+            data: 
+            {
+              posts: 
+              [
+                  { id: 1  , author:'Osama' , title: 'Passing Data' } , 
+                  { id: 2  , author:'Ahmed' , title: 'Passing Data' } , 
+                  { id: 3  , author:'Ali'   , title: 'Passing Data' } , 
+              ]
+            }
+        })
+    </script>
+</body>
+</html>
