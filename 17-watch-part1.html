@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Watch part-1 </title>
+</head>
+<body>
+    <div id="multi"> 
+        <label for=""> Currency Convert </label> <br> 
+        <label for=""> Egyption Currency</label> 
+        <input type="text" v-model='eg'> <br>  <br>
+        <label for=""> Saudi Riyal </label>
+        <input type="text" v-model='sa'>
+     </div>
+
+    <script src="vue.js"></script>
+    <script>
+    
+        var ve = new Vue ({
+            el: '#multi' ,
+            data: 
+            {
+                eg: '',
+                sa:'',
+            } , 
+            methods:
+            {
+         
+            } , 
+            computed: 
+            {  
+      
+            }, 
+            watch: 
+            {
+                eg: function(v) {
+                     this.sa =  v / 5; 
+                } , 
+                sa: function(v) {
+                     this.eg =  v * 5;  
+                } , 
+            } , 
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Computed Part 2 </title>
+</head>
+<body>
+        
+    <div id="multi"> 
+        <h3> Welcome  {{ name }} </h3>  
+        <label for=""> Search for Programming language: </label>
+        <input type="text" v-model='findlang'>
+        <ul>
+            <li v-for='lang in filterlanguage'>
+                {{ lang }}
+            </li>
+        </ul>
+     </div>
+
+    <script src="vue.js"></script>
+    <script>
+    
+        var ve = new Vue ({
+            el: '#multi' ,
+            data: 
+            {
+                name: 'Osama' ,
+                findlang: '', 
+                languages: [
+                    'HTML',
+                    'Css',
+                    'Javascript',
+                    'Jquery',
+                    'Bootstrap',
+                    'PHP',
+                    'Mysql',
+                    'Laravel',
+                    'Vue.js' , 
+                    'Python'
+                ]
+            } , 
+            methods:
+            {
+         
+            } , 
+            computed: 
+            {  
+             filterlanguage: function() {
+                 var filter  =  new RegExp( this.findlang ,'i');
+                //  return this.languages.filter( function(el) {
+                //      return el.match(filter);
+                //  });
+                 return this.languages.filter(el => el.match(filter) ) ;
+             }
+            }, 
+        })
+    </script>
+</body>
+</html>

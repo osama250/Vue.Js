@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Watch part-2 </title>
+</head>
+<body>
+    <div id="multi"> 
+        <label> Time </label> <br> 
+        <label> Hour </label> 
+        <input type="text" v-model="h"> 
+        <label> Minute </label>
+        <input type="text" v-model="m">
+        <label> Secands </label>
+        <input type="text" v-model="s">
+     </div>
+
+    <script src="vue.js"></script>
+    <script>
+    
+        var ve = new Vue ({
+            el: '#multi' ,
+            data: 
+            {
+                h: 0,
+                m: 0,
+                s: 0,
+            } , 
+            watch: 
+            {
+                h: function(v) {
+                     this.m =  v * 60; 
+                     console.log('Run Hour');
+                } ,  
+                m: function(v) {
+                     this.h = v / 60;
+                     this.s = v * 60;
+                     console.log('Run Minute');
+                } , 
+                s: function(v) {
+                     this.m = v / 60;
+                     console.log('Run Secands');
+                } ,  
+            } , 
+        })
+    </script>
+</body>
+</html>

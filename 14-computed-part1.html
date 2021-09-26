@@ -13,6 +13,7 @@
         <h5> Your Age Is {{ calcage }}  </h5> 
         <h5> Your Age Is {{ calcage }}  </h5> 
         <h5> Your Age Is {{ calcage }}  </h5> 
+        <h5> {{ fullname }} </h5>
         <h4> {{ reverse }} </h4>
      </div>
 
@@ -23,7 +24,8 @@
             el: '#multi' ,
             data: 
             {
-                name: 'Osama Yousry' , 
+                name: 'Osama' ,
+                lname: 'Yousry', 
                 age: 23  
             } , 
             methods:
@@ -41,6 +43,9 @@
                 } , 
                 reverse: function() {
                     return this.name.split('').reverse().join('');
+                } , 
+                fullname: function() {
+                    return `${this.name} ${this.lname}`;    // ex 6 of js 
                 }
             }
         })
